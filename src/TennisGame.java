@@ -28,12 +28,8 @@ public class TennisGame {
 			return "love";
 		case 1:
 			return "15";
-		case 2:
-			return "30";
-		case 3:
-			return "40";
 		default:
-			return "40";
+			return "30";
 		}
 	}
 
@@ -71,8 +67,6 @@ public class TennisGame {
 // "player1 wins"
 // "player2 wins"
 
-		String player1Score = getScore(player1Points);
-		String player2Score = getScore(player2Points);
 
 		if (gameEnded) {
 			if (player1Points > player2Points) {
@@ -81,7 +75,7 @@ public class TennisGame {
 				return "player2 wins";
 			}
 		}
-
+ 
 		if (player1Points >= 4 && player1Points == player2Points) {
 			return "deuce";
 		}
@@ -94,6 +88,9 @@ public class TennisGame {
 			return "player2 has advantage";
 		}
 
+		String player1Score = getScore(player1Points);
+		String player2Score = getScore(player2Points);
+		
 		return player2Score + " - " + player1Score;
 	}
 }

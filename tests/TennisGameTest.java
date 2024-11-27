@@ -91,6 +91,24 @@ public class TennisGameTest {
 		// Assert
 		assertEquals("Player win incorrect", "player1 wins", score);
 	}
+	@Test
+	public void testTennisGame_Player1WinsByTwo() throws TennisGameException {
+		// Arrange
+		TennisGame game = new TennisGame();
+
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		// Act
+		String score = game.getScore();
+		// Assert
+		assertEquals("Player win incorrect", "player1 wins", score);
+	}
 
 	@Test
 	public void testTennisGame_Player2Wins() throws TennisGameException {
@@ -100,6 +118,24 @@ public class TennisGameTest {
 		game.player2Scored();
 		game.player2Scored();
 		game.player2Scored();
+		game.player2Scored();
+		// Act
+		String score = game.getScore();
+		// Assert
+		assertEquals("Player win incorrect", "player2 wins", score);
+	}
+	@Test
+	public void testTennisGame_Player2WinsByTwo() throws TennisGameException {
+		// Arrange
+		TennisGame game = new TennisGame();
+
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		
 		game.player2Scored();
 		// Act
 		String score = game.getScore();
